@@ -2,7 +2,11 @@ SimpleCrud::Application.routes.draw do
 
 
 
-  resources :users
+  resources :users do
+    resources :inscriptions
+  end
+
+
 
 
   root :to => 'home#index'

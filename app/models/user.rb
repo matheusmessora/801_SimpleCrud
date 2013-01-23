@@ -2,6 +2,10 @@
 class User < ActiveRecord::Base
 	attr_accessible :email, :login, :name, :password
 
+	has_many :inscriptions
+
+
+	# VALIDATION
 	#presence
 	validates	:email, :login, :password, :presence => true
 	#length
