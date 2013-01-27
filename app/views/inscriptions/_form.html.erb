@@ -1,0 +1,30 @@
+<%= form_for([@user, @user.inscriptions.build]) do |f| %>
+  <% if !@inscription.nil? && @inscription.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inscription.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @inscription.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :paymentMethod %><br />
+    <%= f.text_field :paymentMethod %>
+  </div>
+  <div class="field">
+    <%= f.label :paymentMethod %><br />
+    <%= select(:inscription, :status, Inscription.allowedStatus ) %>
+  </div>
+
+  <div class="actions">
+  	<%= f.submit %>
+	</div>
+<% end %>

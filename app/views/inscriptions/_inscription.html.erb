@@ -1,0 +1,6 @@
+<p>
+  <b>Adress:</b> <%= inscription.address %>
+  <b>PaymentMethod:</b> <%= inscription.paymentMethod %>
+
+  <%= link_to 'Expirar', [inscription.user, inscription], :method => "put" %>
+ </p>

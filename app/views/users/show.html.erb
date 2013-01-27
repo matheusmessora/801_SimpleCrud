@@ -1,5 +1,6 @@
-<p id="notice"><%= notice %></p>
+  <%= @user.inscriptions %>
 
+<p id="notice"><%= notice %></p>
 <p>
   <b>Name:</b>
   <%= @user.name %>
@@ -20,6 +21,10 @@
   <%= @user.password %>
 </p>
 
+<h2>Assinatura</h2>
+<%= render @user.inscriptions %>
+
+<%= render "inscriptions/form" %>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

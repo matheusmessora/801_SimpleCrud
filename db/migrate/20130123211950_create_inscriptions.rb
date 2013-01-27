@@ -4,6 +4,7 @@ class CreateInscriptions < ActiveRecord::Migration
       t.references :user
       t.string :paymentMethod
       t.string :address
+      t.integer :status
 
       t.timestamps
     end
